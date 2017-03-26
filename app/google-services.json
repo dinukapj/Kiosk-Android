@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "928431615696",
+    "firebase_url": "https://kiosk-1dfc2.firebaseio.com",
+    "project_id": "kiosk-1dfc2",
+    "storage_bucket": "kiosk-1dfc2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:928431615696:android:3c12b50389ff0bee",
+        "android_client_info": {
+          "package_name": "kiosk.dinuka.com.kiosk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "928431615696-8de8gole4gjnn9nabv1vspvddn655msj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kiosk.dinuka.com.kiosk",
+            "certificate_hash": "48043049314eed6b469375b0f4c2a6558a2e3623"
+          }
+        },
+        {
+          "client_id": "928431615696-6evdfca6c5j00m8ehjtie2qh5srsq6mo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kiosk.dinuka.com.kiosk",
+            "certificate_hash": "403c71591c465616000f1bda7f5f7ab7c992b725"
+          }
+        },
+        {
+          "client_id": "928431615696-08m30sdh3b1166kj2u1er84hmjtnosu5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuN0a4ZnJjo_yH67FQjRU2ZhOT4IrNxtk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "928431615696-08m30sdh3b1166kj2u1er84hmjtnosu5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
