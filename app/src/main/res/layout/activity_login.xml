@@ -123,6 +123,18 @@
                 android:maxLines="1"
                 android:textSize="18sp" />
 
+            <TextView
+                android:id="@+id/tvError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etPassword"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:text=""
+                android:textColor="@color/red"
+                android:textSize="16sp" />
+
         </RelativeLayout>
 
     </ScrollView>
@@ -146,6 +158,24 @@
             android:text="Login"
             android:textColor="#ffffff"
             android:textSize="20sp" />
+
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/rlProgress"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:alpha="0.9">
+
+        <ProgressBar
+            android:id="@+id/pbCircle"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
     </RelativeLayout>
 

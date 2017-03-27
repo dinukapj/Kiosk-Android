@@ -8,13 +8,13 @@ import com.google.gson.annotations.SerializedName;
 
 public class User {
 
-    @SerializedName("ID")
+    @SerializedName("id")
     private String ID = "";
 
-    @SerializedName("Name")
+    @SerializedName("name")
     private String Name = "";
 
-    @SerializedName("Picture")
+    @SerializedName("picture")
     private String Picture = "";
 
     public User(){

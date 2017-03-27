@@ -2,7 +2,11 @@ package kiosk.dinuka.com.kiosk.api;
 
 import android.util.Log;
 
+import kiosk.dinuka.com.kiosk.R;
+import kiosk.dinuka.com.kiosk.entities.HttpResponse;
 import kiosk.dinuka.com.kiosk.entities.User;
+import kiosk.dinuka.com.kiosk.helpers.ResponseCallBack;
+import kiosk.dinuka.com.kiosk.helpers.SharedData;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -15,33 +19,33 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class UserAPI {
 
-    User user = new User();
+    HttpResponse<User> httpResponse = new HttpResponse<>("", "", new User());
 
-    public User LoginUser(String collegeId, String password){
+    public void LoginUser(String collegeId, String password, final ResponseCallBack<HttpResponse<User>> callBack){
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.66:8086/")
+                .baseUrl(SharedData.getInstance().getBaseURL())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         APIServices service = retrofit.create(APIServices.class);
 
-        Call<User> call = service.login(collegeId, password);
-        call.enqueue(new Callback<User>() {
+        Call<HttpResponse<User>> call = service.login(collegeId, password);
+        call.enqueue(new Callback<HttpResponse<User>>() {
             @Override
-            public void onResponse(Call<User> call, Response<User> response) {
+            public void onResponse(Call<HttpResponse<User>> call, Response<HttpResponse<User>> response) {
                 if (response.isSuccessful()) {
-                    user = response.body();
+                    httpResponse = response.body();
+                    callBack.onSuccess(httpResponse);
                 }
             }
 
             @Override
-            public void onFailure(Call<User> call, Throwable t) {
+            public void onFailure(Call<HttpResponse<User>> call, Throwable t) {
+                callBack.onFailure("Server error. Please try again later");
                 Log.d("DINSTER", t.toString());
             }
         });
-
-        return user;
     }
 
 }

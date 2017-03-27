@@ -2,6 +2,7 @@ package kiosk.dinuka.com.kiosk.api;
 
 import java.util.List;
 
+import kiosk.dinuka.com.kiosk.entities.HttpResponse;
 import kiosk.dinuka.com.kiosk.entities.User;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,6 +25,6 @@ public interface APIServices {
 
     @POST("accounts/login")
     @FormUrlEncoded
-    Call<User> login(@Field("collegeId") String collegeId, @Field("password") String password);
+    Call<HttpResponse<User>> login(@Field("collegeId") String collegeId, @Field("password") String password);
 
 }

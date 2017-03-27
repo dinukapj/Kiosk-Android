@@ -10,6 +10,7 @@ import com.google.firebase.FirebaseApp;
 import kiosk.dinuka.com.kiosk.activities.HomeView;
 import kiosk.dinuka.com.kiosk.activities.LoginActivity;
 import kiosk.dinuka.com.kiosk.activities.WelcomeActivity;
+import kiosk.dinuka.com.kiosk.helpers.SharedData;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         MainActivity.this.getSupportActionBar().hide();
+
+        SharedData.getInstance().setBaseURL("http://192.168.1.66:8086/");
 
         startActivity(new Intent(this, WelcomeActivity.class));
         finish();
