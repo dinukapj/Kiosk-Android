@@ -20,7 +20,7 @@ public class UserAPI {
     public User LoginUser(String collegeId, String password){
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://localhost:3306/")
+                .baseUrl("http://192.168.1.66:8086/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -37,7 +37,7 @@ public class UserAPI {
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-
+                Log.d("DINSTER", t.toString());
             }
         });
 

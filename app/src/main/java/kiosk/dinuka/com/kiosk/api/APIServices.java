@@ -4,10 +4,14 @@ import java.util.List;
 
 import kiosk.dinuka.com.kiosk.entities.User;
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 /**
  * Created by dinuka on 27/03/2017.
@@ -15,10 +19,11 @@ import retrofit2.http.Path;
 
 public interface APIServices {
 
-    @GET("group/{id}/users")
-    Call<List<User>> groupList(@Path("id") int groupId);
+    @GET("accounts/getprofile")
+    Call<List<User>> getProfile(@Query("id") int userId);
 
-    @POST("login")
-    Call<User> login(@Body String collegeId, @Body String password);
+    @POST("accounts/login")
+    @FormUrlEncoded
+    Call<User> login(@Field("collegeId") String collegeId, @Field("password") String password);
 
 }
