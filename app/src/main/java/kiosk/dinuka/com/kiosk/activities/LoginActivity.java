@@ -4,13 +4,14 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import kiosk.dinuka.com.kiosk.R;
 import kiosk.dinuka.com.kiosk.api.UserAPI;
 import kiosk.dinuka.com.kiosk.entities.HttpResponse;
@@ -20,8 +21,17 @@ import kiosk.dinuka.com.kiosk.helpers.SharedData;
 
 public class LoginActivity extends AppCompatActivity {
 
-    RelativeLayout rlBack, rlLogin, rlProgress;
-    EditText etCollegeId, etPassword;
+    @BindView(R.id.rlBack)
+    RelativeLayout rlBack;
+    @BindView(R.id.rlLogin)
+    RelativeLayout rlLogin;
+    @BindView(R.id.rlProgress)
+    RelativeLayout rlProgress;
+    @BindView(R.id.etCollegeId)
+    EditText etCollegeId;
+    @BindView(R.id.etPassword)
+    EditText etPassword;
+    @BindView(R.id.tvError)
     TextView tvError;
     HttpResponse<User> response;
 
@@ -29,15 +39,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ButterKnife.bind(this);
 
         LoginActivity.this.getSupportActionBar().hide();
-
-        rlBack = (RelativeLayout) findViewById(R.id.rlBack);
-        etCollegeId = (EditText) findViewById(R.id.etCollegeId);
-        etPassword = (EditText) findViewById(R.id.etPassword);
-        rlLogin = (RelativeLayout) findViewById(R.id.rlLogin);
-        rlProgress = (RelativeLayout) findViewById(R.id.rlProgress);
-        tvError = (TextView) findViewById(R.id.tvError);
 
         rlBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
                         public void run() {
                             if (response.status.equals("SUCCESS")) {
                                 tvError.setText("");
-                                
+
                                 User user = response.object;
                                 SharedData.getInstance().setUser(user);
 
@@ -122,4 +126,5 @@ public class LoginActivity extends AppCompatActivity {
 
         }
     }
+
 }
