@@ -21,6 +21,12 @@ public class User {
 
     }
 
+    public User(String ID, String name, String picture) {
+        this.ID = ID;
+        Name = name;
+        Picture = picture;
+    }
+
     public String getID() {
         return ID;
     }

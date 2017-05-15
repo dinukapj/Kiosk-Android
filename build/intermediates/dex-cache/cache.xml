@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="/Users/dinuka/Documents/AndroidApps/Kiosk/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="8f6ec7fd686ec2b867ae519c32aa849658a0332f">
-        <dex dex="/Users/dinuka/Documents/AndroidApps/Kiosk/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_1dd9ae0082c724321e2faaed059f9b49ca27095a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/dinuka/Documents/AndroidApps/Kiosk/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
         sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
         <dex dex="/Users/dinuka/Documents/AndroidApps/Kiosk/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_ca210d6403316d5526e6760148f6acc3d4169def/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/dinuka/Documents/AndroidApps/Kiosk/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c4128679082f54a63df9ae85914e78daceafc18d">
+        <dex dex="/Users/dinuka/Documents/AndroidApps/Kiosk/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_1dd9ae0082c724321e2faaed059f9b49ca27095a/classes.dex" />
     </item>
 
 </items>

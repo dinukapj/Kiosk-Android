@@ -19,7 +19,8 @@
         <activity android:name=".activities.HomeView" />
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.ValidatingActivity" />
-        <activity android:name=".activities.WelcomeActivity"></activity>
+        <activity android:name=".activities.WelcomeActivity" />
+        <activity android:name=".activities.ChooseFoodActivity"></activity>
     </application>
 
 </manifest>

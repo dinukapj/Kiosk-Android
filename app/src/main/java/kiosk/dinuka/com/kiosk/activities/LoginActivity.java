@@ -21,17 +21,11 @@ import kiosk.dinuka.com.kiosk.helpers.SharedData;
 
 public class LoginActivity extends AppCompatActivity {
 
-    @BindView(R.id.rlBack)
     RelativeLayout rlBack;
-    @BindView(R.id.rlLogin)
     RelativeLayout rlLogin;
-    @BindView(R.id.rlProgress)
     RelativeLayout rlProgress;
-    @BindView(R.id.etCollegeId)
     EditText etCollegeId;
-    @BindView(R.id.etPassword)
     EditText etPassword;
-    @BindView(R.id.tvError)
     TextView tvError;
     HttpResponse<User> response;
 
@@ -39,7 +33,16 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        ButterKnife.bind(this);
+
+        rlBack = (RelativeLayout) findViewById(R.id.rlBack);
+        rlLogin = (RelativeLayout) findViewById(R.id.rlLogin);
+        rlProgress = (RelativeLayout) findViewById(R.id.rlProgress);
+        etCollegeId = (EditText) findViewById(R.id.etCollegeId);
+        etPassword = (EditText) findViewById(R.id.etPassword);
+        tvError = (TextView) findViewById(R.id.tvError);
+
+        etCollegeId.setText("TP111111");
+        etPassword.setText("123");
 
         LoginActivity.this.getSupportActionBar().hide();
 
@@ -65,7 +68,21 @@ public class LoginActivity extends AppCompatActivity {
 
                         rlProgress.setVisibility(View.VISIBLE);
 
-                        new Login(etCollegeId.getText().toString(), etPassword.getText().toString()).execute();
+                        String tpNumber = etCollegeId.getText().toString();
+                        String password = etPassword.getText().toString();
+
+                        if (tpNumber.equals("TP111111") && password.equals("123")) {
+                            User user = new User("1", "Dinuka Jayasuriya", "");
+                            SharedData.getInstance().setUser(user);
+
+                            Intent intent = new Intent(LoginActivity.this, HomeView.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            tvError.setText("Invalid credentials. Please try again.");
+                            rlProgress.setVisibility(View.GONE);
+                        }
 
                         break;
                 }

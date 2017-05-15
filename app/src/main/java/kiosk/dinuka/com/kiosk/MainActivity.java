@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         SharedData.getInstance().setBaseURL("http://192.168.1.66:8086/");
 
-        startActivity(new Intent(this, WelcomeActivity.class));
+        startActivity(new Intent(this, HomeView.class));
         finish();
 
     }
