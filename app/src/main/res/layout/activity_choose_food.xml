@@ -6,9 +6,15 @@
     android:layout_height="match_parent"
     tools:context="kiosk.dinuka.com.kiosk.activities.ChooseFoodActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvList"
+    <com.astuetz.PagerSlidingTabStrip
+        android:id="@+id/tabs"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+        android:layout_height="48dip" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vpMenu"
+        android:layout_below="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
 
 </RelativeLayout>

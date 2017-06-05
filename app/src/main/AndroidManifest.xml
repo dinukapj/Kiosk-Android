@@ -20,7 +20,11 @@
         <activity android:name=".activities.LoginActivity" />
         <activity android:name=".activities.ValidatingActivity" />
         <activity android:name=".activities.WelcomeActivity" />
-        <activity android:name=".activities.ChooseFoodActivity"></activity>
+        <activity android:name=".activities.ChooseFoodActivity" />
+        <activity android:name=".activities.fragments.SnacksFragment" />
+        <activity android:name=".activities.fragments.BeveragesFragment" />
+        <activity android:name=".activities.AddonsActivity" />
+        <activity android:name=".activities.CartActivity"></activity>
     </application>
 
 </manifest>
