@@ -17,6 +17,6 @@ public class LargeSize extends BeverageDecorator {
 
     @Override
     public String getDescription() {
-        return super.getDescription() + " Selected Large size";
+        return super.getDescription() + " + Selected Large size";
     }
 }

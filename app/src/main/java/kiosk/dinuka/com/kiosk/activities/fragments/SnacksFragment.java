@@ -72,7 +72,7 @@ public class SnacksFragment extends Fragment {
         item.setId("1");
         item.setName("Fried Rice");
         item.setPicture("http://thewoksoflife.com/wp-content/uploads/2015/12/egg-fried-rice-8.jpg");
-        item.setPrice(10.20);
+        item.setItemPrice(10.20);
         item.setDescription("Delicious piece of shit");
         items.add(item);
 
@@ -81,7 +81,7 @@ public class SnacksFragment extends Fragment {
         item.setId("2");
         item.setName("Noodles");
         item.setPicture("https://budgetbytes.com/wp-content/uploads/2016/05/Lime-Shrimp-Dragon-Noodles-stix.jpg");
-        item.setPrice(6.80);
+        item.setItemPrice(6.80);
         item.setDescription("Our favorite Chinese Noodles");
         items.add(item);
 

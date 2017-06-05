@@ -17,6 +17,6 @@ public class ExtraMilk extends BeverageDecorator {
 
     @Override
     public String getDescription() {
-        return super.getDescription() + " Added Extra Milk";
+        return super.getDescription() + " + Added Extra Milk";
     }
 }

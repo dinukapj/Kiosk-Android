@@ -34,6 +34,8 @@ public class AddonsActivity extends AppCompatActivity {
     String sugarLevels = "low";
     String milkLevels = "low";
 
+    String beverageName = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +44,8 @@ public class AddonsActivity extends AppCompatActivity {
         setTitle("Choose Addons");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+
+        beverageName = getIntent().getExtras().getString("beverageName");
 
         rlSmallSize = (RelativeLayout) findViewById(R.id.rlSmallSize);
         rlMediumSize = (RelativeLayout) findViewById(R.id.rlMediumSize);
@@ -192,13 +196,8 @@ public class AddonsActivity extends AppCompatActivity {
             }
         }
 
-        //Log.d("DINSTER", "size " + size);
-        //Log.d("DINSTER", "sugarLevels " + sugarLevels);
-        //Log.d("DINSTER", "milkLevels " + milkLevels);
-        //Log.d("DINSTER", "TOTAL " + beverage.getPrice());
-
         PlainBeverage newBeverage = new PlainBeverage();
-        newBeverage.setName("TEST NAME");
+        newBeverage.setName(beverageName);
         newBeverage.setDescription(beverage.getDescription());
         newBeverage.setItemPrice(beverage.getPrice());
 
@@ -206,6 +205,7 @@ public class AddonsActivity extends AppCompatActivity {
 
         Intent intent = new Intent(AddonsActivity.this, CartActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @Override

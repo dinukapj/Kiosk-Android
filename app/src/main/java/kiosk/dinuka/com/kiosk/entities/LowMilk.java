@@ -14,4 +14,9 @@ public class LowMilk extends BeverageDecorator {
     public double getPrice() {
         return super.getPrice() + 1.5;
     }
+
+    @Override
+    public String getDescription() {
+        return super.getDescription() + " + Added Low Milk";
+    }
 }

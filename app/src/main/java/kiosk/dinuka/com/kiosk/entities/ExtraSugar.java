@@ -17,6 +17,6 @@ public class ExtraSugar extends BeverageDecorator {
 
     @Override
     public String getDescription() {
-        return super.getDescription() + " Added Extra Sugar";
+        return super.getDescription() + " + Added Extra Sugar";
     }
 }

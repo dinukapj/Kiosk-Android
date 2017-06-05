@@ -17,6 +17,6 @@ public class MediumSize extends BeverageDecorator {
 
     @Override
     public String getDescription() {
-        return super.getDescription() + " Selected Medium size";
+        return super.getDescription() + " + Selected Medium size";
     }
 }

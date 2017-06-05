@@ -12,15 +12,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:text="Browsing"
+        android:layout_marginTop="10dp"
+        android:text="Total Price"
         android:textColor="@color/white"
         android:textSize="16sp" />
 
     <TextView
+        android:id="@+id/tvTotalPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:text="Your Cart"
+        android:text="RM0.0"
         android:textColor="@color/white"
         android:textSize="24sp" />
 

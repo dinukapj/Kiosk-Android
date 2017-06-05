@@ -47,7 +47,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        MenuItem item = items.get(position);
+        final MenuItem item = items.get(position);
 
         //set name
         holder.tvName.setText(item.getName());
@@ -56,7 +56,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
         holder.tvDetails.setText(item.getDescription());
 
         //set price
-        holder.tvPrice.setText("RM" + item.getPrice());
+        holder.tvPrice.setText("RM" + item.getItemPrice());
 
         //set availability
         if(item.getAvailable()) {
@@ -83,6 +83,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, AddonsActivity.class);
+                intent.putExtra("beverageName", item.getName());
                 context.startActivity(intent);
             }
         });

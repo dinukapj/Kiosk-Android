@@ -11,7 +11,7 @@ import java.util.Date;
 public class Order {
 
     private User user;
-    private ArrayList<MenuItem> items;
+    private ArrayList<MenuItem> items = new ArrayList<>();
     private Date orderDate;
     private Time orderTime;
     private double totalAmount;

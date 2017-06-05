@@ -72,7 +72,7 @@ public class BeveragesFragment extends Fragment {
         item.setId("1");
         item.setName("Coffee");
         item.setPicture("http://blog.wlingua.com/learn-english/wp-content/uploads/sites/11/2016/05/coffee-cup.jpg");
-        item.setPrice(3.60);
+        item.setItemPrice(3.60);
         item.setDescription("Tastes bitter but it definitely keeps you up at night");
         items.add(item);
 
@@ -81,7 +81,7 @@ public class BeveragesFragment extends Fragment {
         item.setId("2");
         item.setName("Milo");
         item.setPicture("https://www.milo.com.ph/sites/milo_philippines2/files/whats-in-a-mug-image.jpg");
-        item.setPrice(2.60);
+        item.setItemPrice(2.60);
         item.setDescription("Tastes like Milo. Trust me, I tried");
         items.add(item);
 
