@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
@@ -26,6 +28,7 @@ public class KitchenActivity extends AppCompatActivity {
     static RecyclerView rvOrders;
     static Context context;
     static Activity activity;
+    LinearLayout llNoItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,7 @@ public class KitchenActivity extends AppCompatActivity {
         KitchenActivity.this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         rvOrders = (RecyclerView) findViewById(R.id.rvOrders);
+        llNoItems = (LinearLayout) findViewById(R.id.llNoItems);
 
         setupData();
 
@@ -54,6 +58,15 @@ public class KitchenActivity extends AppCompatActivity {
         rvOrders.addItemDecoration(new DividerItemDecoration(context, LinearLayoutManager.VERTICAL));
         rvOrders.setItemAnimator(new DefaultItemAnimator());
         rvOrders.setAdapter(adapter);
+
+        if(orders.size() > 0){
+            rvOrders.setVisibility(View.VISIBLE);
+            llNoItems.setVisibility(View.GONE);
+        }
+        else{
+            rvOrders.setVisibility(View.GONE);
+            llNoItems.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
