@@ -1,17 +1,18 @@
 package kiosk.dinuka.com.kiosk.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.facebook.common.util.UriUtil;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -23,7 +24,9 @@ import java.util.List;
 
 import kiosk.dinuka.com.kiosk.R;
 import kiosk.dinuka.com.kiosk.activities.AddonsActivity;
+import kiosk.dinuka.com.kiosk.activities.CartActivity;
 import kiosk.dinuka.com.kiosk.entities.MenuItem;
+import kiosk.dinuka.com.kiosk.entities.OrderSingleton;
 
 /**
  * Created by dinuka on 02/06/2017.
@@ -33,10 +36,12 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
 
     private List<MenuItem> items;
     private Context context;
+    private Activity activity;
 
-    public MenuAdapter(List<MenuItem> items, Context context) {
+    public MenuAdapter(List<MenuItem> items, Context context, Activity activity) {
         this.items = items;
         this.context = context;
+        this.activity = activity;
     }
 
     @Override
@@ -59,10 +64,9 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
         holder.tvPrice.setText("RM" + item.getItemPrice());
 
         //set availability
-        if(item.getAvailable()) {
+        if (item.getAvailable()) {
             holder.tvStatus.setText("Available");
-        }
-        else{
+        } else {
             holder.tvStatus.setText("Out of order");
         }
 
@@ -79,14 +83,23 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
         holder.sdvPicture.setController(controller);
 
         final ViewHolder hl = holder;
-        hl.content.setOnClickListener(new View.OnClickListener() {
+        hl.btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-                Intent intent = new Intent(context, AddonsActivity.class);
-                intent.putExtra("beverageName", item.getName());
-                context.startActivity(intent);
+                if(item.getAvailable()) {
+                    if (item.getType().equals("beverage")) {
+                        Intent intent = new Intent(context, AddonsActivity.class);
+                        intent.putExtra("beverageName", item.getName());
+                        context.startActivity(intent);
+                    } else {
+                        OrderSingleton.getInstance().getItems().add(item);
+                        Intent intent = new Intent(context, CartActivity.class);
+                        context.startActivity(intent);
+                    }
+                }
+                else{
+                    Snackbar.make(activity.findViewById(android.R.id.content), "Sorry the selected item is currently out of order", Snackbar.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -102,6 +115,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
         TextView tvName, tvDetails, tvPrice, tvStatus;
         SimpleDraweeView sdvPicture;
         LinearLayout content;
+        Button btnAdd;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -111,6 +125,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
             tvPrice = (TextView) itemView.findViewById(R.id.tvPrice);
             tvStatus = (TextView) itemView.findViewById(R.id.tvStatus);
             content = (LinearLayout) itemView.findViewById(R.id.content);
+            btnAdd = (Button) itemView.findViewById(R.id.btnAdd);
         }
     }
 

@@ -1,0 +1,16 @@
+
+*.lock
+
+*.bin
+
+*.rawproto
+
+*.bin
+
+*.bin
+
+.gradle/3.3/taskArtifacts/taskArtifacts.bin
+
+.gradle/3.3/taskArtifacts/fileSnapshots.bin
+
+*.bin

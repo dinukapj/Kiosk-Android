@@ -32,30 +32,57 @@
             android:textColor="#999999"
             android:textSize="14sp" />
 
-        <com.facebook.drawee.view.SimpleDraweeView
-            android:id="@+id/sdvPicture"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="10dp"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/ic_launcher"
-            fresco:placeholderImage="@color/grey" />
+            android:layout_height="150dp">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/sdvPicture"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher"
+                fresco:placeholderImage="@color/grey" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:padding="10dp"
+                android:background="#000000"
+                android:alpha="0.8">
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="RM15"
+                    android:layout_centerInParent="true"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tvPrice"
+            <Button
+                android:id="@+id/btnAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
-                android:layout_marginTop="10dp"
-                android:text="RM15"
-                android:textColor="#333333"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:layout_weight="1"
+                android:text="Add Item"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:theme="@style/ThemeButton" />
 
             <TextView
                 android:id="@+id/tvStatus"

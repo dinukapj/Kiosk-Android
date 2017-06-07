@@ -14,7 +14,7 @@ import kiosk.dinuka.com.kiosk.activities.fragments.SnacksFragment;
 
 public class PagerAdapter extends FragmentPagerAdapter {
 
-    private final String[] TITLES = { "Snacks", "Beverages" };
+    private final String[] TITLES = { "Food", "Beverages" };
     private Context context;
 
     public PagerAdapter(Context context, FragmentManager fm) {

@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import kiosk.dinuka.com.kiosk.R;
 import kiosk.dinuka.com.kiosk.adapters.MenuAdapter;
 import kiosk.dinuka.com.kiosk.entities.MenuItem;
+import kiosk.dinuka.com.kiosk.entities.MenuSingleton;
 
 public class BeveragesFragment extends Fragment {
 
@@ -67,25 +68,13 @@ public class BeveragesFragment extends Fragment {
 
     private void setMenu() {
 
-        MenuItem item = new MenuItem();
-        item.setAvailable(true);
-        item.setId("1");
-        item.setName("Coffee");
-        item.setPicture("http://blog.wlingua.com/learn-english/wp-content/uploads/sites/11/2016/05/coffee-cup.jpg");
-        item.setItemPrice(3.60);
-        item.setDescription("Tastes bitter but it definitely keeps you up at night");
-        items.add(item);
+        for(MenuItem item: MenuSingleton.getInstance()){
+            if(item.getType().equals("beverage")){
+                items.add(item);
+            }
+        }
 
-        item = new MenuItem();
-        item.setAvailable(false);
-        item.setId("2");
-        item.setName("Milo");
-        item.setPicture("https://www.milo.com.ph/sites/milo_philippines2/files/whats-in-a-mug-image.jpg");
-        item.setItemPrice(2.60);
-        item.setDescription("Tastes like Milo. Trust me, I tried");
-        items.add(item);
-
-        adapter = new MenuAdapter(items, getActivity());
+        adapter = new MenuAdapter(items, getActivity(), getActivity());
         rvList.setHasFixedSize(true);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         rvList.setLayoutManager(mLayoutManager);

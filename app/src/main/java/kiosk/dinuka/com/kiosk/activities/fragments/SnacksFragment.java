@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import kiosk.dinuka.com.kiosk.R;
 import kiosk.dinuka.com.kiosk.adapters.MenuAdapter;
 import kiosk.dinuka.com.kiosk.entities.MenuItem;
+import kiosk.dinuka.com.kiosk.entities.MenuSingleton;
 
 public class SnacksFragment extends Fragment {
 
@@ -67,25 +68,13 @@ public class SnacksFragment extends Fragment {
 
     private void setMenu() {
 
-        MenuItem item = new MenuItem();
-        item.setAvailable(true);
-        item.setId("1");
-        item.setName("Fried Rice");
-        item.setPicture("http://thewoksoflife.com/wp-content/uploads/2015/12/egg-fried-rice-8.jpg");
-        item.setItemPrice(10.20);
-        item.setDescription("Delicious piece of shit");
-        items.add(item);
+        for(MenuItem item: MenuSingleton.getInstance()){
+            if(item.getType().equals("snack")){
+                items.add(item);
+            }
+        }
 
-        item = new MenuItem();
-        item.setAvailable(false);
-        item.setId("2");
-        item.setName("Noodles");
-        item.setPicture("https://budgetbytes.com/wp-content/uploads/2016/05/Lime-Shrimp-Dragon-Noodles-stix.jpg");
-        item.setItemPrice(6.80);
-        item.setDescription("Our favorite Chinese Noodles");
-        items.add(item);
-
-        adapter = new MenuAdapter(items, getActivity());
+        adapter = new MenuAdapter(items, getActivity(), getActivity());
         rvList.setHasFixedSize(true);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         rvList.setLayoutManager(mLayoutManager);

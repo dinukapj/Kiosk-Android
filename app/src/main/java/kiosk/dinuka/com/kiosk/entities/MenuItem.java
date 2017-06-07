@@ -13,6 +13,16 @@ public class MenuItem {
     private Double ItemPrice = 0.0;
     private Boolean isAvailable = false;
 
+    public String getType() {
+        return Type;
+    }
+
+    public void setType(String type) {
+        Type = type;
+    }
+
+    private String Type = "";
+
     public String getId() {
         return Id;
     }
@@ -60,5 +70,6 @@ public class MenuItem {
     public void setAvailable(Boolean available) {
         isAvailable = available;
     }
+
 
 }

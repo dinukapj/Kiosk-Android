@@ -2,6 +2,7 @@ package kiosk.dinuka.com.kiosk.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -47,6 +48,9 @@ public class TopupActivity extends AppCompatActivity {
                     resultIntent.putExtra("outstanding", outstandingBalance);
                     setResult(Activity.RESULT_OK, resultIntent);
                     finish();
+                }
+                else{
+                    Snackbar.make(findViewById(android.R.id.content), "Enter an amount to top-up", Snackbar.LENGTH_LONG).show();
                 }
             }
         });
