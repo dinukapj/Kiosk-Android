@@ -10,7 +10,7 @@ import java.util.Date;
 
 public class Order {
 
-    private User user;
+    private User user = new User();
     private ArrayList<MenuItem> items = new ArrayList<>();
     private Date orderDate;
     private Time orderTime;

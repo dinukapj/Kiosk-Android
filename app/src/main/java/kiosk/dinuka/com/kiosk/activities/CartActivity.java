@@ -26,6 +26,7 @@ public class CartActivity extends AppCompatActivity {
     RecyclerView rvCart;
     Button btnAdd, btnCheckout;
     TextView tvTotalPrice;
+    double totalPrice = 0.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,7 @@ public class CartActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(CartActivity.this, CheckoutActivity.class);
+                intent.putExtra("total", totalPrice);
                 startActivity(intent);
             }
         });
@@ -70,7 +72,6 @@ public class CartActivity extends AppCompatActivity {
         rvCart.setItemAnimator(new DefaultItemAnimator());
         rvCart.setAdapter(adapter);
 
-        double totalPrice = 0.0;
         for (int i = 0; i < cartItems.size(); i++) {
             totalPrice = totalPrice + cartItems.get(i).getItemPrice();
         }

@@ -25,7 +25,9 @@
         <activity android:name=".activities.fragments.BeveragesFragment" />
         <activity android:name=".activities.AddonsActivity" />
         <activity android:name=".activities.CartActivity" />
-        <activity android:name=".activities.CheckoutActivity"></activity>
+        <activity android:name=".activities.CheckoutActivity" />
+        <activity android:name=".activities.TopupActivity" />
+        <activity android:name=".activities.KitchenActivity"></activity>
     </application>
 
 </manifest>

@@ -8,23 +8,13 @@ import com.google.gson.annotations.SerializedName;
 
 public class User {
 
-    @SerializedName("id")
     private String ID = "";
-
-    @SerializedName("name")
     private String Name = "";
-
-    @SerializedName("picture")
     private String Picture = "";
+    private Account Account = new Account();
 
     public User(){
 
-    }
-
-    public User(String ID, String name, String picture) {
-        this.ID = ID;
-        Name = name;
-        Picture = picture;
     }
 
     public String getID() {
@@ -50,6 +40,18 @@ public class User {
     public void setPicture(String picture) {
         Picture = picture;
     }
+
+    public kiosk.dinuka.com.kiosk.entities.Account getAccount() {
+        return Account;
+    }
+
+    public void setAccount(kiosk.dinuka.com.kiosk.entities.Account account) {
+        Account = account;
+    }
+
+
+
+
 
 
 }

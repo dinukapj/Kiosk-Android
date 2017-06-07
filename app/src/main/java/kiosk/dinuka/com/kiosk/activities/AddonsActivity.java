@@ -198,7 +198,7 @@ public class AddonsActivity extends AppCompatActivity {
 
         PlainBeverage newBeverage = new PlainBeverage();
         newBeverage.setName(beverageName);
-        newBeverage.setDescription(beverage.getDescription());
+        newBeverage.setDescription(beverage.getExtraDetails());
         newBeverage.setItemPrice(beverage.getPrice());
 
         OrderSingleton.getInstance().getItems().add(newBeverage);

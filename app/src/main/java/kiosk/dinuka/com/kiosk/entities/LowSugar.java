@@ -16,7 +16,7 @@ public class LowSugar extends BeverageDecorator {
     }
 
     @Override
-    public String getDescription() {
-        return super.getDescription() + " + Added Low Sugar";
+    public String getExtraDetails() {
+        return super.getExtraDetails() + " + Added Low Sugar";
     }
 }

@@ -8,6 +8,6 @@ public interface Beverage {
 
     double getPrice();
 
-    String getDescription();
+    String getExtraDetails();
 
 }

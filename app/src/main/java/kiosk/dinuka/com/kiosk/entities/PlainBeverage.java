@@ -14,7 +14,8 @@ public class PlainBeverage extends MenuItem implements Beverage {
     }
 
     @Override
-    public String getDescription() {
-        return super.getDescription() + "Selected Beverage ";
+    public String getExtraDetails() {
+        //Selected Beverage
+        return super.getDescription() + "";
     }
 }

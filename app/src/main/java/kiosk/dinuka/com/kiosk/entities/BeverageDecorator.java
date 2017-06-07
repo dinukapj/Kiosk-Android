@@ -18,7 +18,7 @@ public abstract class BeverageDecorator implements Beverage {
     }
 
     @Override
-    public String getDescription() {
-        return beverage.getDescription();
+    public String getExtraDetails() {
+        return beverage.getExtraDetails();
     }
 }

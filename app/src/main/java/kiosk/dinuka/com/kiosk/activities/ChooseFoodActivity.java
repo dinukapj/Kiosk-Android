@@ -9,6 +9,8 @@ import com.astuetz.PagerSlidingTabStrip;
 
 import kiosk.dinuka.com.kiosk.R;
 import kiosk.dinuka.com.kiosk.adapters.PagerAdapter;
+import kiosk.dinuka.com.kiosk.entities.OrderSingleton;
+import kiosk.dinuka.com.kiosk.entities.UserSingleton;
 
 public class ChooseFoodActivity extends AppCompatActivity {
 
@@ -25,6 +27,8 @@ public class ChooseFoodActivity extends AppCompatActivity {
         ChooseFoodActivity.this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         vpMenu = (ViewPager) findViewById(R.id.vpMenu);
+
+        OrderSingleton.getInstance().setUser(UserSingleton.getInstance());
 
         adapter = new PagerAdapter(ChooseFoodActivity.this, getSupportFragmentManager());
         vpMenu.setAdapter(adapter);

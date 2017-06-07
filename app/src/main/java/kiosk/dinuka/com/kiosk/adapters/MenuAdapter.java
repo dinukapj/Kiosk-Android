@@ -82,6 +82,8 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
         hl.content.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 Intent intent = new Intent(context, AddonsActivity.class);
                 intent.putExtra("beverageName", item.getName());
                 context.startActivity(intent);

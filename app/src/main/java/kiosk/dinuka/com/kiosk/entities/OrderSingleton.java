@@ -14,4 +14,8 @@ public class OrderSingleton {
         return instance;
     }
 
+    public static void resetInstance(){
+        instance = new Order();
+    }
+
 }

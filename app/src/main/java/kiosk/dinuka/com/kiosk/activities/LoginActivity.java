@@ -72,8 +72,8 @@ public class LoginActivity extends AppCompatActivity {
                         String password = etPassword.getText().toString();
 
                         if (tpNumber.equals("TP111111") && password.equals("123")) {
-                            User user = new User("1", "Dinuka Jayasuriya", "");
-                            SharedData.getInstance().setUser(user);
+                            //User user = new User("1", "Dinuka Jayasuriya", "");
+                            //SharedData.getInstance().setUser(user);
 
                             Intent intent = new Intent(LoginActivity.this, HomeView.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
